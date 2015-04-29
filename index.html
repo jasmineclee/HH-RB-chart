@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+ <head>
+    <meta charset="utf-8">
+
+    <title>Hip-Hop/Rap vs. R&B/Soul vs. Pop Billboard #1 Singles, 2000-2005</title>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js/script.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div id="chart"></div>
+
+<script>
+
+
+
+var chart = c3.generate({
+    size: {
+        height: 500,
+        width: 1300,
+    },
+    data: {
+        columns: [
+["Hip-Hop/Rap",0,1,37,33,16,19],
+  ["R&B/Soul",6,26,11,1,36,9],
+  ["Pop",32,18,2,18,0,25]
+        ],
+        type: 'bar'
+    },
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+
+setTimeout(function () {
+    chart.load({
+        columns: [
+        ]
+    });
+}, 1000);
+
+
+
+
+// var chart = c3.generate({
+//     size: {
+//         height: 500,
+//         width: 1300,
+//     },
+//     data: {
+//         columns: 
+//         [
+//   ["Hip-Hop/Rap",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,7,0,3,10,22,3,1,0,1,37,33,16,19,12,24,28,12,10,1,2,13,9,2],
+//   ["R&B/Soul",0,4,2,8,8,9,9,8,4,11,17,20,8,10,12,9,6,11,14,8,21,8,11,2,4,8,4,9,7,0,1,10,12,19,15,23,27,22,11,29,14,6,26,11,1,36,9,5,15,3,0,4,0,0,0,3,0],
+//   ["Pop",36,27,21,31,27,10,18,20,22,13,18,19,15,18,20,20,20,11,17,28,13,11,27,19,33,36,21,25,25,34,39,31,28,30,25,24,17,20,7,14,27,32,18,2,18,0,25,28,10,15,38,37,37,31,34,40,16]
+//         ],
+//         type: 'bar',
+//         groups: [
+//             ['Hip-Hop/Rap','R&B/Soul','Pop']
+//         ]
+//     },
+//     axis: {
+//         x: {
+//              label: {
+//               text: 'Years since the chart began',
+//               position: 'outer-center'
+//             },
+//             type: 'category', // this needed to load string x value
+//         }
+//     },
+//     grid: {
+//         y: {
+//             lines: [{value:0}]
+//         }
+//     },
+//     tooltip: {
+//         grouped: false // Default true
+//     }
+
+// });
+
+// setTimeout(function () {
+//     chart.groups([['Hip-Hop/Rap', 'R&B/Soul','Pop']])
+// }, 1000);
+
+// setTimeout(function () {
+//     chart.load({
+//         columns: [
+
+//         ]
+                
+//     });
+// }, 1500);
+
+// setTimeout(function () {
+//     chart.groups([['Hip-Hop/Rap','R&B/Soul','Pop']])
+// }, 2000);
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
