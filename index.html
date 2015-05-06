@@ -23,8 +23,10 @@
 var chart = c3.generate({
     size: {
         height: 500,
-        width: 1300,
+        width: 992,
     },
+
+
     data: {
         columns: [
 ["Hip-Hop/Rap",0,1,37,33,16,19],
@@ -33,13 +35,80 @@ var chart = c3.generate({
         ],
         type: 'bar'
     },
+
+
     bar: {
         width: {
-            ratio: 0.5 // this makes bar width 50% of length between ticks
+            ratio: 0.7 // this makes bar width 50% of length between ticks
         }
         // or
         //width: 100 // this makes bar width 100px
+    },
+
+    padding: {
+      bottom: 20,
+    },
+
+    legend: {
+      position: 'inset',
+      inset: {
+        anchor: 'top-right'
+      }
+    },
+
+
+    axis: {
+
+
+        x: {
+            height: 10,
+            label: {
+              text: 'Year',
+              position: 'inner-right'
+            },
+            padding: {
+              right: .3
+            },
+            type: 'category', // this needed to load string x value
+            categories: ['2000','2001','2002','2003','2004','2005'],
+
+            tick: {
+              rotate: 0,
+              // count: 56,
+              culling: {
+                  max: 14
+                  }
+            }
+        },
+
+
+        y: {
+          label: {
+            text: "Weeks on chart"
+          },
+          tick: {
+            values: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40]
+          },
+          // padding: {
+          //   top: 0
+          // }
+        }
+    },
+
+
+    grid: {
+        y: {
+            lines: [{value:0}]
+        }
+    },
+
+
+    tooltip: {
+        grouped: false // Default true
     }
+
+
+
 });
 
 setTimeout(function () {
@@ -48,6 +117,13 @@ setTimeout(function () {
         ]
     });
 }, 1000);
+
+
+chart.data.colors({
+  "Hip-Hop/Rap": '#ff7f0e',
+  "R&B/Soul": '#2ca02c',
+  "Pop": '#9467bd',  
+});
 
 
 
